@@ -1,12 +1,7 @@
 /*  Create table     */
 ---------------------------------------------
 
-CREATE TABLE schema_name.table_name (
-    column_1 data_type column_constraint,
-    column_2 data_type column_constraint,
-    ...
-    table_constraint
- );
+ 
 
 Ex1:
 
@@ -57,4 +52,36 @@ ALTER TABLE
         created_at TIMESTAMP WITH TIME ZONE NOT NULL,
         updated_at TIMESTAMP WITH TIME ZONE NOT NULL
     );
+
+
+
+
+
+/* Auto increment primary key field of productid in PRODUCT table */
+------------------------------------------
+
+CREATE TABLE Product (
+    Productid int NOT NULL AUTO_INCREMENT,
+    ProductName varchar(255) NOT NULL,
+    ProductNumber varchar(255),
+    Numberofproducts int,
+    PRIMARY KEY (Productid)
+);
+
+
+
+
+/* UNIQUE constraint ensures that all values in a column are different */
+--------------------------------------------------------
+
+CREATE TABLE Product (
+    ID int NOT NULL,
+    ProductName varchar(255) NOT NULL,
+    ProductNumber varchar(255),
+    Numberofproducts int,
+    CONSTRAINT UC_Person UNIQUE (ID,ProductNumber)
+);
+
+
+
 
